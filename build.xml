@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<project name="st1920.automaton" default="all" basedir=".">
+
+	<property name="project" value="automaton" />
+	<property name="version" value="0" />
+	<property name="release" value="0" />
+
+	<property name="optimize" value="on" />
+	<property name="debug" value="off" />
+
+	<property name="public" value="${user.home}/public_html/${project}"/>
+
+	<target name="all" depends="jar,doc" />
+
+	<target name="compile">
+		<mkdir dir="antbuild" />
+		<javac srcdir="src" destdir="antbuild" source="1.6" target="1.6" optimize="${optimize}" debug="${debug}" includeantruntime="false" />
+	</target>
+
+	<target name="jar" depends="compile">
+		<mkdir dir="dist" />
+		<jar jarfile="dist/${project}.jar" basedir="antbuild" includes="st1920/**/*.class" />
+	</target>
+
+	<target name="clean">
+		<delete dir="antbuild" />
+		<delete dir="doc" />
+		<delete dir="dist" />
+	</target>
+
+	<target name="doc" depends="jar">
+		<mkdir dir="doc" />
+		<javadoc packagenames="dk.brics.automaton" 
+			sourcepath="src" 
+			destdir="doc" 
+			nodeprecated="true" 
+			author="true" 
+			notree="true" 
+			nohelp="true" 
+			windowtitle="dk.brics.automaton"
+			additionalparam="-Xdoclint:none">
+			<doctitle><![CDATA[dk.brics.automaton<br>API Specification]]></doctitle>
+			<bottom><![CDATA[<i> Copyright &#169; 2001-2017 Anders M&oslash;ller. </i>]]></bottom>
+			<link href="http://download.oracle.com/javase/1.5.0/docs/api/" />
+		</javadoc>
+	</target>
+
+</project>
