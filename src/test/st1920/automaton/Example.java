@@ -1,8 +1,10 @@
-package st1920.automaton;
+package test.st1920.automaton;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import st1920.automaton.RegExpMatcher;
 
 public class Example {
 
