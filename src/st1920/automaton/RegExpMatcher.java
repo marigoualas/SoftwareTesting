@@ -80,6 +80,22 @@ public class RegExpMatcher {
     public static String makeNum() {
         return "1";
     }
+    
+    public static String makeOrSymbol() {
+        return "|";
+    }
+    
+    public static String makeAndSymbol() {
+        return "&";
+    }
+    
+    public static String makeStar() {
+        return "*";
+    }
+    
+    public static String makePlus() {
+        return "+";
+    }
 
     public static String makeConcatenation(String l, String r) {
         return l + r;
