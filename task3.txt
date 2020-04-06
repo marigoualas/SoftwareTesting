@@ -1,0 +1,8 @@
+In this part of the coursework we had to use randoop to generate test cases so we could improve the branch coverage.
+Pros:
+- Thousands of test cases are generated in less than a minute.
+- The test cases generated improved the branch coverage up to more than 50%.
+
+Cons:
+- In order to create meaningful tests, the user has to create some wrapper methods first in order for randoop to utilise them - in order to generate "inputs" for the context of the task.
+- Many of those tests don't cover edge cases which are only "accessible" by specific branches in the code, so the user has to manually write tests to use in conjunction with randoop's tests to further improve the branch coverage.
